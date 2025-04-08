@@ -1,25 +1,32 @@
-.login{
+.login {
     height: 100vh;
     background-image: linear-gradient(#0000007e,#0000007e),url('../../../public/background_banner.jpg');
+    background-size: cover;
+    background-position: center;
     padding: 20px 8%;
 }
-.login-logo{
+
+.login-logo {
     width: 150px;
 }
-.login-form{
+
+.login-form {
     width: 100%;
     max-width: 420px;
     background: rgba(0, 0, 0, 0.75);
     border-radius: 4px;
     padding: 60px;
     margin: auto;
+    color: white;
 }
-.login-form h1{
+
+.login-form h2 {
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 28px;
 }
-.login-form input{
+
+.login-form input {
     width: 100%;
     height: 50px;
     background: #333;
@@ -32,11 +39,13 @@
     font-size: 16px;
     font-weight: 500;
 }
-.login-form::placeholder{
+
+.login-form::placeholder {
     font-size: 16px;
     font-weight: 500;
 }
-.login-form button{
+
+.login-form button {
     width: 100%;
     border: 0;
     outline: 0;
@@ -49,29 +58,94 @@
     margin-top: 20px;
     cursor: pointer;
 }
-.form-help{
+
+.form-help {
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #b3b3b3;
     font-size: 13px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-.remember{
+
+.remember {
     display: flex;
     align-items: center;
     gap: 5px;
 }
-.remember input{
+
+.remember input {
     height: 18px;
     width: 18px;
 }
-.form-switch{
+
+.form-switch {
     margin-top: 40px;
     color: #737373;
+    font-size: 14px;
+    text-align: center;
 }
-.form-switch span{
+
+.form-switch span {
     margin-left: 6px;
     color: #fff;
     font-weight: 500;
     cursor: pointer;
+}
+
+
+/* 🔽 Tablet */
+@media (max-width: 768px) {
+    .login-form {
+        padding: 40px;
+    }
+
+    .login-form h2 {
+        font-size: 28px;
+    }
+
+    .login-form input,
+    .login-form button {
+        font-size: 15px;
+    }
+
+    .form-switch {
+        font-size: 13px;
+    }
+}
+
+/* 🔽 Phone */
+@media (max-width: 480px) {
+    .login {
+        padding: 20px 5%;
+    }
+
+    .login-logo {
+        width: 120px;
+    }
+
+    .login-form {
+        padding: 30px 20px;
+    }
+
+    .login-form h2 {
+        font-size: 24px;
+    }
+
+    .login-form input,
+    .login-form button {
+        height: 45px;
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+
+    .form-help {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-switch {
+        font-size: 13px;
+    }
 }

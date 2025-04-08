@@ -1,23 +1,58 @@
-.player{
+.player {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    background-color: black;
 }
-.player img{
+
+.player img {
     position: absolute;
     top: 20px;
     left: 20px;
     width: 50px;
     cursor: pointer;
+    z-index: 2;
 }
-.player iframe{
-    border: 10px;
+
+.player iframe {
+    width: 90%;
+    height: 80vh;
+    border: none;
+    border-radius: 8px;
 }
-.player-info{
+
+.player-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 90%;
+    max-width: 900px;
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+    .player-info {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 13px;
+    }
+
+    .player img {
+        width: 40px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .player iframe {
+        height: 60vh;
+    }
 }

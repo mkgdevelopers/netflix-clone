@@ -26,18 +26,49 @@ const Player = () => {
   
   
 
-    useEffect(()=>{
-      fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
+  useEffect(() => {
+    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
       .then(res => res.json())
-      .then(res => setApiData(res.results[0]))
-      .catch(err => console.error(err));
-    })
+      .then(res => {
+        if (res.results && res.results.length > 0) {
+          setApiData(res.results[0]);
+        } else {
+          setApiData({
+            name: "Not Available",
+            key: "",
+            published_at: "0000-00-00",
+            type: "N/A"
+          });
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        setApiData({
+          name: "Not Available",
+          key: "",
+          published_at: "0000-00-00",
+          type: "N/A"
+        });
+      });
+  }, [id]);
+  
   return (
     <div className='player'>
       <img src={back_arrow} alt="" onClick={()=>{navigate(-2)}}/>
-      <iframe width='90%' height='90%' 
-      src={`https://youtube.com/embed/${apiData.key}`} 
-      title='trailer' frameborder="0" allowFullScreen></iframe>
+      {apiData.key ? (
+  <iframe 
+    width='90%' height='90%' 
+    src={`https://youtube.com/embed/${apiData.key}`} 
+    title='trailer' 
+    frameBorder="0" 
+    allowFullScreen
+  ></iframe>
+) : (
+  <p style={{ color: 'white', textAlign: 'center' }}>
+    Trailer not available.
+  </p>
+)}
+
       <div className="player-info">
         <p>{apiData.published_at.slice(0,10)}</p>
         <p>{apiData.name}</p>
