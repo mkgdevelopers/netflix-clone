@@ -1,13 +1,89 @@
-# React + Vite
+Netflix Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Netflix clone built using React.js, CSS, and React Router. This project mimics the look and feel of Netflix, providing features like browsing popular movies, viewing details, and watching trailers.
 
-Currently, two official plugins are available:
+Live Demo: Netflix Clone
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Responsive Design: The app is fully responsive, adapting to various screen sizes from desktop to mobile.
 
-## Expanding the ESLint configuration
+    Movie Listings: Fetches real-time data from the TMDB API (The Movie Database) to display the latest movies.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# netflix-clone
+    Play Trailers: Click on a movie to watch its trailer embedded from YouTube.
+
+    User Authentication: Sign up and sign-in functionalities (with simple form handling).
+
+    Customizable Pages: Different movie categories such as "Top Picks", "Popular", "Top Rated", etc.
+
+Screenshots
+
+Home screen showing the main banner and movie titles.
+
+Video player page with embedded trailers.
+Tech Stack
+
+    Frontend: React.js, React Router, CSS, HTML
+
+    API: The Movie Database (TMDB)
+
+    Styling: Custom CSS for layout and design
+
+    Hosting: Vercel (Live site deployment)
+
+Getting Started
+
+To run this project locally, follow these steps:
+
+    Clone the repository
+
+git clone https://github.com/your-username/netflix-clone.git
+
+Navigate to the project directory
+
+cd netflix-clone
+
+Install dependencies
+
+npm install
+
+Create an .env file in the root directory and add your TMDB API key.
+
+REACT_APP_TMDB_API_KEY=your_api_key_here
+
+Start the development server
+
+    npm start
+
+    Your app will be live at http://localhost:3000.
+
+API Integration
+
+The app fetches movie data from the TMDB API:
+
+    API endpoint: https://api.themoviedb.org/3/movie/{category}?language=en-US&page=1
+
+    Categories:
+
+        now_playing
+
+        top_rated
+
+        popular
+
+        upcoming
+
+For accessing API data, you'll need to add your TMDB API Key.
+Features to Add
+
+    User Profiles: Allow users to create and manage their profiles.
+
+    Watchlist: Enable users to add movies to a personal watchlist.
+
+    User Reviews: Users can leave reviews for movies.
+
+Issues & Contributions
+
+Feel free to fork this project and open pull requests. If you encounter any issues or have suggestions, create an issue on GitHub.
+License
+
+This project is licensed under the MIT License.
