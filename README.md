@@ -60,13 +60,14 @@ cd netflix-clone
 npm install
 npm start
 
+```
 
-🙌 Acknowledgements
+# 🙌 Acknowledgements
 
-    Inspired by the original Netflix UI.
+   - Inspired by the original Netflix UI.
 
 ✨ Author
 
 Muaaz Naeem
 📧 muaaznaeemoff@gmail.com
-🔗 GitHub Profile
+
